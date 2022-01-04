@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>OpenStore</title>
+    <meta name="description" content="Get OpenStore, an open app store">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.1.3/dist/sandstone/bootstrap.min.css" integrity="sha256-zWAnZkKmT2MYxdCMp506rQtnA9oE2w0/K/WVU7V08zw=" crossorigin="anonymous">
+    
+    <style>
+      body {
+        --bs-body-font-size: 1.3rem;
+      }
+      
+      a {
+        text-decoration: none;
+      }
+
+      .content-container-60 {
+        width: 60%;
+        margin: auto;
+      }
+      .content-container-80 {
+        width: 80%;
+        margin: auto;
+      }
+      
+      .app-icon-image {
+        display: block;
+        margin: auto;
+        
+        object-fit: contain;
+        width: 15%;
+        height: auto;
+      }
+      .showcase-image {
+        object-fit: contain;
+        width: 100%;
+        height: auto;
+      }
+
+      ul.bullet-cross {
+        list-style: "\2718\0020" outside;
+      }
+      ul.bullet-checkmark {
+        list-style: "\2714\0020" outside;
+      }
+      ul.feature-list > li::marker {
+        font-size: 1.2em;
+      }
+      ul.feature-list > li {
+        padding-left: 0.25em;
+        margin-bottom: 0.15em;
+      }
+      
+      .btn {
+        display: block;
+        margin: auto;
+        
+        width: 67%;
+        height: 3.2em;
+        font-size: 1rem;
+        line-height: 2.2em;
+      }
+      
+      .version-number {
+        font-size: 0.75rem;
+        vertical-align: top;
+      }
+      
+      .disclaimer, .disclaimer > li {
+        font-size: calc(0.7 * var(--bs-body-font-size));
+      }
+      .disclaimer > li::marker {
+        font-size: 0.7em;
+        padding-bottom: 1em;
+      }
+    </style>
+  </head>
+  <body class="container">
+    <img class="app-icon-image my-4" src="images/openstore-app-icon.png" alt="Openstore app icon">
+    <h1 class="text-center fw-bolder mb-3">OpenStore<i class="fs-3 fw-normal"> Beta</i></h1>
+    <h2 class="text-center">An open app store<br/><span class="fs-4">for macOS</span></h2>
+    
+    <br/>
+
+    <div class="content-container-60">
+      <p>OpenStore helps you find, install, and manage your favorite apps.</p>
+      
+      <p>OpenStore <strong>doesn't</strong>:</p>
+      <ul class="feature-list bullet-cross ms-1">
+        <li>Restrict app features</li>
+        <li>Process payments</li>
+      </ul>
+      <p>OpenStore <strong>does</strong>:</p>
+      <ul class="feature-list bullet-checkmark ms-1">
+        <li>Give you a catalog of 3000+ apps at your fingertips</li>
+        <li>Install, update, and uninstall apps with a single click</li>
+        <li>Let you add your own source repositories <span class="disclaimer">(Coming soon)</span></li>
+      </ul>
+      
+      <a class="btn btn-success mt-5" href="https://github.com/GetOpenStore/OpenStore/releases/download/0.1.0/OpenStore.v0.1.0.zip">Download&ensp;<span class="version-number">(v0.1.0)</span></a>
+      <a class="btn btn-secondary mt-4 mb-5" href="https://github.com/GetOpenStore/OpenStore">Source Code on GitHub</a>
+      
+      <p>OpenStore is powered by <a href="https://brew.sh">Homebrew</a>, the missing package manager for macOS. The <a href="https://github.com/Homebrew/homebrew-cask#readme">default repository</a> is graciously maintained by the Homebrew user community.</p>
+      
+      <h3>Screenshots</h3>
+    </div>
+    <div class="content-container-80">
+      <img class="showcase-image" src="images/screenshot-browse-installed.png" alt="Screenshot of OpenStore: Browsing installed apps">
+      <img class="showcase-image" src="images/screenshot-search.png" alt="Screenshot of OpenStore: Searching for apps to install">
+      <img class="showcase-image" src="images/screenshot-app-info.png" alt="Screenshot of OpenStore: App information page, with an Install button at the top">
+    </div>
+
+    <div class="content-container-60">
+      <p class="disclaimer mt-4 mb-2">Please note:</p>
+      <ul class="disclaimer">
+        <li>OpenStore is not affiliated with or endorsed by the Homebrew project.</li>
+        <li>OpenStore is not affiliated with or endorsed by the owners of the software it aggregates.</li>
+        <li>OpenStore contributors are not responsible for the contents of Homebrew source repositories, including <a href="https://github.com/Homebrew/homebrew-cask">Homebrew/homebrew-cask</a> (provided by default).</li>
+      </ul>
+      <br/>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
