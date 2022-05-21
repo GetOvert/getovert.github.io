@@ -18,13 +18,19 @@
         text-decoration: none;
       }
 
-      .content-container-60 {
-        width: 60%;
+      .content-width-constrained-strong {
+        width: 90%;
+        max-width: 600px;
         margin: auto;
       }
-      .content-container-80 {
-        width: 80%;
+      .content-width-constrained-weak {
+        max-width: 90%;
         margin: auto;
+      }
+      @media (min-width: 1200px) {
+        .content-width-constrained-weak {
+          width: 85%;
+        }
       }
       
       .app-icon-image {
@@ -65,6 +71,7 @@
         line-height: 2.2em;
       }
       
+      /* For version number in Install button; please delete this if not used for a while */
       .version-number {
         font-size: 0.75rem;
         vertical-align: top;
@@ -79,14 +86,14 @@
       }
     </style>
   </head>
-  <body class="container">
+  <body class="container-fluid">
     <img class="app-icon-image my-4" src="images/openstore-app-icon.png" alt="Openstore app icon">
     <h1 class="text-center fw-bolder mb-3">OpenStore<i class="fs-3 fw-normal"> Beta</i></h1>
     <h2 class="text-center">An open app store<br/><span class="fs-4">for macOS</span></h2>
     
     <br/>
 
-    <div class="content-container-60">
+    <div class="content-width-constrained-strong">
       <p>OpenStore helps you find, install, and manage your favorite apps.</p>
       
       <p>OpenStore <strong>doesn't</strong>:</p>
@@ -108,11 +115,11 @@
       
       <p>OpenStore is powered by <a href="https://brew.sh">Homebrew</a>, a package manager for macOS. The <a href="https://github.com/Homebrew/homebrew-cask#readme">default repository</a> is graciously maintained by the Homebrew user community.</p>
       
-      <p>While OpenStore currently only integrates with Homebrew, it may be extended in the future to work with other package managers, such as Chocolatey.</p>
+      <p>While OpenStore currently only integrates with Homebrew, it will be extended in the near future to support other package managers, especially on Windows.</p>
       
       <h2>Screenshots</h2>
     </div>
-    <div class="content-container-80">
+    <div class="content-width-constrained-weak">
       <img class="showcase-image" src="images/screenshot-0.png" alt="Screenshot of OpenStore: Browsing installed apps">
       <img class="d-block col showcase-image" src="images/screenshot-1.png" alt="Screenshot of OpenStore: Searching for apps, search term is &quot;Microsoft&quot;">
       <img class="d-block col showcase-image" src="images/screenshot-2.png" alt="Screenshot of OpenStore: Installing Microsoft Excel">
@@ -120,7 +127,7 @@
       <img class="d-block col showcase-image" src="images/screenshot-4.png" alt="Options pane">
     </div>
 
-    <aside class="content-container-60">
+    <aside class="content-width-constrained-strong">
       <p class="disclaimer mt-4 mb-2">Please note:</p>
       <ul class="disclaimer">
         <li>OpenStore is not affiliated with or endorsed by the Homebrew project.</li>
