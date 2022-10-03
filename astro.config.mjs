@@ -1,9 +1,10 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 
 import lit from "@astrojs/lit";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [mdx(), lit()]
+  site: "https://getovert.app",
+  integrations: [mdx(), lit()],
 });
