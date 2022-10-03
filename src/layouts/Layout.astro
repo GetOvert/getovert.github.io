@@ -1,0 +1,193 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>{title}</title>
+    <meta name="description" content="Get Overt, an open app store" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootswatch@5.1.3/dist/sandstone/bootstrap.min.css"
+      integrity="sha256-zWAnZkKmT2MYxdCMp506rQtnA9oE2w0/K/WVU7V08zw="
+      crossorigin="anonymous"
+    />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex" href="/">
+          <img
+            class="drop-shadow ms-2 me-1"
+            width="46"
+            height="46"
+            src="/images/overt-app-icon.png"
+            alt="Openstore app icon"
+          />
+          <div class="word-mark-stack ms-1">
+            Overt<br />
+            <span class="smol fw-normal">open app store</span>
+          </div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav navbar-nav-left">
+            <li class="nav-item ms-3 mt-2 mb-1 ms-lg-1 me-lg-2 my-lg-0">
+              <a class="btn btn-primary" href="/about">About</a>
+            </li>
+
+            <li class="nav-item ms-3 my-1 ms-lg-1 me-lg-2 my-lg-0">
+              <a class="btn btn-success" href="/install">Install</a>
+            </li>
+
+            <li class="nav-item dropdown ms-3 my-1 ms-lg-1 me-lg-2 my-lg-0">
+              <a
+                class="btn btn-outline-dark dropdown-toggle"
+                id="navbarDropdownMenuLink-developers"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Develop
+              </a>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink-developers"
+              >
+                <li>
+                  <a class="dropdown-item" href="/developers/distribution"
+                    >Distribution</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/developers/marketing"
+                    >Marketing</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav ms-lg-auto">
+            <li class="nav-item ms-3 my-1 ms-lg-1 me-lg-2 my-lg-0">
+              <a
+                class="btn btn-info"
+                href="https://github.com/GetOvert/Overt/discussions"
+                target="_blank"
+                >Discuss <i
+                  class="bi bi-box-arrow-up-right ms-1"
+                  role="img"
+                  aria-label="External link"></i>
+              </a>
+            </li>
+            <li class="nav-item ms-3 mt-1 mb-2 ms-lg-1 me-lg-2 my-lg-0">
+              <a
+                class="btn btn-outline-secondary"
+                href="https://github.com/GetOvert"
+                target="_blank"
+                >GitHub <i
+                  class="bi bi-box-arrow-up-right ms-1"
+                  role="img"
+                  aria-label="External link"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container-fluid mt-4">
+      <slot />
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
+<style is:global>
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+  @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+  body {
+    --bs-body-font-size: 1.05rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .astro-code {
+    padding: 1rem;
+  }
+
+  .drop-shadow {
+    filter: drop-shadow(0.1em 0.2em 0.23em rgba(0, 0, 0, 0.25));
+  }
+
+  .navbar-brand {
+    font-family: Inter, var(--bs-body-font-family);
+    font-weight: 600;
+
+    color: #2c2d29 !important;
+  }
+
+  .navbar-brand .word-mark-stack {
+    margin-top: 0.3rem;
+    line-height: 0.85;
+  }
+  .navbar-brand .word-mark-stack .smol {
+    font-size: 0.8rem;
+  }
+
+  .navbar-nav-left .nav-item .btn {
+    transform: translateY(1px);
+  }
+
+  .content-width-constrained-strong {
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+  }
+  .content-width-constrained-weak {
+    max-width: 90%;
+    margin: auto;
+  }
+  @media (min-width: 1200px) {
+    .content-width-constrained-weak {
+      width: 85%;
+    }
+  }
+</style>

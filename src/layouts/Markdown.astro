@@ -1,0 +1,38 @@
+---
+import type { MarkdownLayoutProps } from "astro";
+import Layout from "./Layout.astro";
+
+type Props = MarkdownLayoutProps<{
+  title: string;
+}>;
+
+const {
+  frontmatter: { title },
+} = Astro.props;
+---
+
+<Layout title={title}>
+  <div class="page-body">
+    <slot />
+  </div>
+</Layout>
+
+<style>
+  .page-body {
+    max-width: 80%;
+    margin: auto;
+  }
+  @media (min-width: 1200px) {
+    .page-body {
+      width: 65%;
+    }
+  }
+</style>
+
+<style is:global>
+  h1 {
+    margin-top: 2rem;
+    margin-bottom: 1.8rem;
+    text-align: center !important;
+  }
+</style>

@@ -1,0 +1,16 @@
+---
+export interface Props {
+  header: string;
+  title: string;
+}
+
+const { header, title } = Astro.props;
+---
+
+<div class="card text-dark bg-white mb-3">
+  {header && <div class="card-header">{header}</div>}
+  <div class="card-body">
+    {title && <h5 class="card-title">{title}</h5>}
+    <slot />
+  </div>
+</div>

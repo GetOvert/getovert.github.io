@@ -1,0 +1,98 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Overt">
+  <img
+    class="app-icon-image drop-shadow my-2 mb-3"
+    src="/images/overt-app-icon.png"
+    alt="Openstore app icon"
+  />
+  <h1 class="text-center fw-bolder">Overt</h1>
+  <h2 class="text-center mt-1">
+    <div>open app store</div>
+    <div class="fs-4 mt-1">for macOS</div>
+  </h2>
+
+  <div class="content-width-constrained-strong my-4">
+    <p>Overt helps you find, install, and manage your favorite apps.</p>
+
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <p class="mb-2">Overt <strong>doesn't</strong>:</p>
+        <ul class="feature-list bullet-cross ms-1">
+          <li>Restrict app features</li>
+          <li>Process payments</li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-lg-6">
+        <p class="mb-2">Overt <strong>does</strong>:</p>
+        <ul class="feature-list bullet-checkmark ms-1">
+          <li>Give you a catalog of 3000+ apps at your fingertips</li>
+          <li>Install, update, and uninstall apps with a single click</li>
+          <li>Let you add your own source repositories</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="d-flex mt-3">
+      <a class="btn btn-primary mx-1" href="/about">About</a>
+      <a class="btn btn-success mx-1" href="/install">Install</a>
+      <a
+        class="btn btn-info mx-1"
+        href="https://github.com/GetOvert/Overt/discussions"
+        target="_blank"
+        >Discuss <i
+          class="bi bi-box-arrow-up-right ms-1"
+          role="img"
+          aria-label="External link"></i>
+      </a>
+    </div>
+  </div>
+
+  <style>
+    body {
+      --bs-body-font-size: 1.2rem;
+    }
+
+    .app-icon-image {
+      display: block;
+      margin: auto;
+
+      object-fit: contain;
+      width: max(4rem, 10vw);
+      height: auto;
+    }
+
+    ul.bullet-cross {
+      list-style: "\2718\0020"outside;
+    }
+    ul.bullet-checkmark {
+      list-style: "\2714\0020"outside;
+    }
+    ul.feature-list > li::marker {
+      font-size: 1.2em;
+    }
+    ul.feature-list > li {
+      padding-left: 0.25em;
+      margin-bottom: 0.15em;
+    }
+
+    .btn {
+      display: block;
+      margin: auto;
+
+      width: 67%;
+      height: 3.2em;
+      font-size: 1rem;
+      line-height: 2.2em;
+    }
+
+    /* For version number in Install button; please delete this if not used for a while */
+    .version-number {
+      font-size: 0.75rem;
+      vertical-align: top;
+    }
+  </style>
+</Layout>

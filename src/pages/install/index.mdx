@@ -1,0 +1,49 @@
+---
+layout: ../../layouts/Markdown.astro
+title: "Install – Overt"
+---
+
+# Install
+
+You will have to use Terminal, but only once.
+
+1. Install <a href="https://brew.sh" target="_blank">Homebrew <i class="bi bi-box-arrow-up-right ms-1" role="img" aria-label="External link"></i> &nbsp;</a>
+   if you haven't yet.
+2. Run the following Terminal commands:
+
+import { Code } from "astro/components";
+
+<Code
+  lang="sh"
+  code={`brew tap homebrew/cask
+brew install getovert/tap/overt
+open -a Overt`}
+  theme="solarized-light"
+/>
+
+3. Overt is now running and in your Applications folder.
+
+---
+
+import Card from "../../components/Card.astro";
+
+<Card header="Future directions &ndash; Automating this process">
+An installation method that avoids the use of Terminal would be ideal.
+
+One idea is to have users download Overt in a `zip` file initially, and have it
+auto-detect the absence of Homebrew and offer to install it, using a flow similar to
+package installation. For users to get updates, Overt would also have to request
+permission to add its own source repository, install itself via the package manager,
+and then nuke the running version from the Downloads folder (or wherever).
+
+Another idea is to have users download a separate "Install Overt" app that guides users
+through the process of installing the package manager, adding the source repository,
+and installing the real Overt package. This approach has some notable downsides, though:
+
+- The installer app would have to be maintained separately, and would probably end up
+  less robust than Overt itself at adding the source repository and installing the package
+- Users would have to redownload the installer if they ever needed to repair their installation
+
+If you have any feedback on this process, please reach out!
+
+</Card>
