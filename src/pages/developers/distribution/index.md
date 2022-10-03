@@ -23,4 +23,4 @@ Once you've packaged your software, either try to contribute it to the package m
   - [Contribute](https://docs.brew.sh/How-To-Open-a-Homebrew-Pull-Request#cask-related-pull-request) if your software is deemed acceptable ([acceptable casks](https://docs.brew.sh/Acceptable-Casks) / [acceptable formulae](https://docs.brew.sh/Acceptable-Formulae))
   - Otherwise, [create a tap](https://docs.brew.sh/How-to-Create-and-Maintain-a-Tap)
 
-Please see [Marketing](marketing) to advertise your Overt presence with a badge and 2-click or 3-click installation link.
+Please see [Marketing](/developers/marketing) to advertise your Overt presence with a badge and 2-click or 3-click installation link.
