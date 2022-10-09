@@ -182,32 +182,32 @@ export default class LinkGenerator extends BootstrapBlockElement {
 
                 ${this.useCustomSourceRepository
                   ? html`<label class="d-block w-100 mt-3 fw-bold">
-                      Output &ndash; Raw <code>add-source-repository</code> link
-                      &ndash;
-                      <span class="text-warning"
-                        >users must have Overt installed already</span
-                      >
-                      <output
-                        for="customSourceRepositoryCheckbox customSourceRepositoryURL"
-                        class="form-control mt-2"
-                        disabled
-                        >${rawAddSourceRepositoryURL}</output
-                      >
-                    </label>`
-                  : ""}
+                        Output &ndash; Raw
+                        <code>add-source-repository</code> link &ndash;
+                        <span class="text-warning"
+                          >users must have Overt installed already</span
+                        >
+                        <output
+                          for="customSourceRepositoryCheckbox customSourceRepositoryURL"
+                          class="form-control mt-2"
+                          disabled
+                          >${rawAddSourceRepositoryURL}</output
+                        >
+                      </label>
 
-                <label class="d-block w-100 mt-3 fw-bold">
-                  Output &ndash; Raw <code>install</code> link &ndash;
-                  <span class="text-warning"
-                    >users must have Overt installed already</span
-                  >
-                  <output
-                    for="packageManager packageName"
-                    class="form-control mt-2"
-                    disabled
-                    >${rawInstallURL}</output
-                  >
-                </label>`
+                      <label class="d-block w-100 mt-3 fw-bold">
+                        Output &ndash; Raw <code>install</code> link &ndash;
+                        <span class="text-warning"
+                          >users must have Overt installed already</span
+                        >
+                        <output
+                          for="packageManager packageName"
+                          class="form-control mt-2"
+                          disabled
+                          >${rawInstallURL}</output
+                        >
+                      </label>`
+                  : ""}`
             : ""}
         </form>
       </div>
