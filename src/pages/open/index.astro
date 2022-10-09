@@ -1,0 +1,100 @@
+---
+import Content from "../../layouts/Content.astro";
+---
+
+<Content title="Open – Overt">
+  <img
+    class="app-icon-image drop-shadow my-2 mb-3"
+    src="/images/overt-app-icon.png"
+    alt="Overt app icon"
+  />
+  <h1 class="text-center">Continue in the Overt app</h1>
+
+  <div class="content-width-constrained-strong">
+    <p>You clicked a link that opens in the Overt app.</p>
+
+    <hr />
+
+    <p><b>Don't have the app yet?</b></p>
+
+    <p>
+      Overt is an open app store for macOS. It's free and <a
+        href="https://github.com/GetOvert"
+        target="_blank"
+        >open-source <i
+          class="bi bi-box-arrow-up-right ms-1"
+          role="img"
+          aria-label="External link"></i>
+      </a>.
+    </p>
+
+    <div class="row">
+      <div class="col">
+        <a class="btn btn-primary btn-lg col-4 my-2 w-100" href="/about"
+          >About</a
+        >
+      </div>
+      <div class="col">
+        <a class="btn btn-success btn-lg col-4 my-2 w-100" href="/install"
+          >Install <i class="bi bi-arrow-down ms-1" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <hr />
+
+    <p><b>Not prompted automatically?</b></p>
+
+    <div class="row">
+      <div class="col">
+        <a
+          class="btn btn-outline-primary btn-lg d-block my-2"
+          onclick="openOvert(); return false"
+          href="#"
+          >Continue in Overt <i
+            class="bi bi-box-arrow-up-right ms-1"
+            role="img"
+            aria-label="Opens desktop app"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</Content>
+
+<style>
+  body {
+    --bs-body-font-size: 1.2rem;
+  }
+
+  h1 {
+    font-weight: 500;
+  }
+
+  .btn {
+    height: 3.2em;
+    font-size: 1rem;
+    line-height: 2.2em;
+  }
+</style>
+
+<script is:inline>
+  function openOvert() {
+    const action = new URL(window.location.href).searchParams.get("action");
+    if (!action) {
+      console.warn("No `action` specified");
+      return window.location.replace("overt:");
+    }
+
+    if (new URL(action).protocol !== "overt:") {
+      throw new Error(
+        `\`action\` URL scheme must be 'overt:', not '${
+          new URL(action).protocol
+        }'`
+      );
+    }
+
+    window.location.assign(action);
+  }
+
+  openOvert();
+</script>
