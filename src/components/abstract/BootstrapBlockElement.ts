@@ -1,11 +1,7 @@
-import { css, CSSResultArray, html, HTMLTemplateResult, LitElement } from "lit";
+import { css, CSSResultArray, LitElement } from "lit";
 import { bootstrap, reboot } from "../../../vendor/bootstrap";
 
 export default class BootstrapBlockElement extends LitElement {
-  constructor() {
-    super();
-  }
-
   static styles: CSSResultArray = [
     reboot,
     bootstrap,
