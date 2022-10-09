@@ -1,5 +1,5 @@
 import BootstrapBlockElement from "./abstract/BootstrapBlockElement";
-import { css, html } from "lit";
+import { html } from "lit";
 import { customElement, state } from "lit/decorators.js";
 
 export const tagName = "getovert-link-generator";
@@ -21,48 +21,75 @@ export default class LinkGenerator extends BootstrapBlockElement {
     this.useCustomSourceRepository = checkbox.checked;
   }
 
-  private get generatedInstallURI(): string | undefined {
+  private generateRawURL(
+    addSourceRepository: boolean,
+    install: boolean
+  ): string | undefined {
     if (this.packageManager === "" || this.packageName === "") return undefined;
-    return `overt:install?package-manager=${this.packageManager}&name=${this.packageName}`;
-  }
 
-  private get generatedAddSourceRepositoryURI(): string | undefined {
-    if (!this.useCustomSourceRepository) return undefined;
-    try {
-      const name = new URL(this.customSourceRepositoryURL).pathname
-        .split("/")
-        .slice(1, 3)
-        .join("/");
-      if (name === "") return;
-      return `overt:add-source-repository?package-manager=${this.packageManager}&name=${name}&url=${this.customSourceRepositoryURL}`;
-    } catch (error) {
-      console.error(error);
-      return undefined;
-    }
-  }
+    const url = new URL(`overt:${this.packageManager}`);
 
-  private get generatedURL(): string | undefined {
-    const url = new URL("https://getovert.app/open");
+    let actionCount = 0;
 
-    if (!this.generatedInstallURI) return undefined;
-    const actions = [this.generatedInstallURI];
+    if (addSourceRepository) {
+      url.searchParams.append(`${++actionCount}`, "add-source-repository");
 
-    if (this.useCustomSourceRepository) {
-      if (!this.generatedAddSourceRepositoryURI) return undefined;
-      actions.unshift(this.generatedAddSourceRepositoryURI);
+      try {
+        const name = new URL(this.customSourceRepositoryURL).pathname
+          .split("/")
+          .slice(1, 3)
+          .join("/");
+        url.searchParams.append(`${actionCount}[name]`, name);
+
+        url.searchParams.append(
+          `${actionCount}[url]`,
+          this.customSourceRepositoryURL
+        );
+      } catch (error) {
+        console.error(error);
+        return undefined;
+      }
     }
 
-    actions.forEach((action, index) => {
-      url.searchParams.set(`action${index + 1}`, action);
-    });
+    if (install) {
+      url.searchParams.append(`${++actionCount}`, "install");
+      url.searchParams.append(`${actionCount}[name]`, this.packageName);
+    }
 
-    return url.href;
+    return this.partiallyUnencode(url.href);
+  }
+
+  private generateWebURL(): string | undefined {
+    const url = new URL(window.location.origin + "/open");
+
+    const rawURL = this.generateRawURL(this.useCustomSourceRepository, true);
+    if (!rawURL) return undefined;
+
+    url.searchParams.append(`action`, rawURL);
+
+    return this.partiallyUnencode(url.href);
+  }
+
+  private partiallyUnencode(url: string): string {
+    // Including these characters unencoded in URLs doesn't cause problems
+    // in real web browsers, at least for our use cases
+    return url
+      .replace(/%2F/g, "/")
+      .replace(/%3A/g, ":")
+      .replace(/%3D/g, "=")
+      .replace(/%5B/g, "[")
+      .replace(/%5D/g, "]");
   }
 
   protected render() {
+    const rawInstallURL = this.generateRawURL(false, true);
+    const rawAddSourceRepositoryURL = this.generateRawURL(true, false);
+    const rawURL = this.generateRawURL(this.useCustomSourceRepository, true);
+    const webURL = this.generateWebURL();
+
     return html`
       <div class="card text-dark bg-white mb-3">
-        <div class="card-header">Installation link generator</div>
+        <div class="card-header">Quick-install link generator</div>
         <form class="card-body" onsubmit="event.preventDefault()">
           <div class="form-check">
             <label class="form-check-label">
@@ -103,7 +130,9 @@ export default class LinkGenerator extends BootstrapBlockElement {
                 (this.packageManager = (event.target as HTMLSelectElement)
                   .value as any)}
             >
-              <option ?selected=${this.packageManager === ""}></option>
+              ${this.packageManager === ""
+                ? html`<option selected>Select</option>`
+                : ""}
               <option ?selected=${this.packageManager === "brew-cask"}>
                 brew-cask
               </option>
@@ -122,15 +151,11 @@ export default class LinkGenerator extends BootstrapBlockElement {
             />
           </label>
 
-          ${(!this.useCustomSourceRepository ||
-            this.generatedAddSourceRepositoryURI) &&
-          this.generatedInstallURI
+          ${webURL
             ? html` <hr />
 
                 <label class="d-block w-100 mt-3 fw-bold">
-                  Output &ndash;
-                  ${!this.useCustomSourceRepository ? "2" : "3"}-click
-                  installation link &ndash;
+                  Output &ndash; Web-based link &ndash;
                   <span class="text-success"
                     >prompts to install Overt if necessary</span
                   >
@@ -138,7 +163,20 @@ export default class LinkGenerator extends BootstrapBlockElement {
                     for="customSourceRepositoryCheckbox customSourceRepositoryURL packageManager packageName"
                     class="form-control mt-2"
                     disabled
-                    >${this.generatedURL}</output
+                    >${webURL}</output
+                  >
+                </label>
+
+                <label class="d-block w-100 mt-3 fw-bold">
+                  Output &ndash; Raw link &ndash;
+                  <span class="text-warning"
+                    >users must have Overt installed already</span
+                  >
+                  <output
+                    for="packageManager packageName"
+                    class="form-control mt-2"
+                    disabled
+                    >${rawURL}</output
                   >
                 </label>
 
@@ -153,7 +191,7 @@ export default class LinkGenerator extends BootstrapBlockElement {
                         for="customSourceRepositoryCheckbox customSourceRepositoryURL"
                         class="form-control mt-2"
                         disabled
-                        >${this.generatedAddSourceRepositoryURI}</output
+                        >${rawAddSourceRepositoryURL}</output
                       >
                     </label>`
                   : ""}
@@ -167,7 +205,7 @@ export default class LinkGenerator extends BootstrapBlockElement {
                     for="packageManager packageName"
                     class="form-control mt-2"
                     disabled
-                    >${this.generatedInstallURI}</output
+                    >${rawInstallURL}</output
                   >
                 </label>`
             : ""}
