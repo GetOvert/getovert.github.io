@@ -7,4 +7,9 @@ import lit from "@astrojs/lit";
 export default defineConfig({
   site: "https://getovert.app",
   integrations: [mdx(), lit()],
+  markdown: {
+    shikiConfig: {
+      theme: "solarized-light",
+    },
+  },
 });

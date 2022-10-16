@@ -7,21 +7,35 @@ title: "Install – Overt"
 
 You will have to use Terminal, but only once.
 
-1. Install <a href="https://brew.sh" target="_blank">Homebrew <i class="bi bi-box-arrow-up-right ms-1" role="img" aria-label="External link"></i> &nbsp;</a>
+1. **Install <a href="https://brew.sh" target="_blank">Homebrew <i class="bi bi-box-arrow-up-right ms-1" role="img" aria-label="External link"></i> &nbsp;</a>**
    if you haven't yet.
 2. Run the following Terminal commands:
 
-import { Code } from "astro/components";
+   ```sh
+   brew tap homebrew/cask
+   brew install getovert/tap/overt
+   open -a Overt
+   ```
 
-<Code
-  lang="sh"
-  code={`brew tap homebrew/cask
-brew install getovert/tap/overt
-open -a Overt`}
-  theme="solarized-light"
-/>
+3. **Done!** Overt is now running and in your Applications folder.
 
-3. Overt is now running and in your Applications folder.
+4. **(Optional)** Some "pkg" installers require elevated permissions. Normally, Overt asks for your password for these.
+
+   If you'd like to use Touch ID instead, install <a href="https://github.com/artginzburg/sudo-touchid" target="_blank">sudo-touchid</a> via Overt:
+
+   1. <a
+        href="/open?action=overt:brew%3F1=add-source-repository%261[name]=artginzburg/homebrew-tap%261[url]=https://github.com/artginzburg/homebrew-tap%262=install%262[name]=sudo-touchid"
+        target="_blank"
+      >
+        Click here to open the Overt app.
+      </a>
+   2. When asked to add "artginzburg/homebrew-tap" as a source, click <span class="bg-primary rounded-pill text-white fs-6">&nbsp; CONTINUE &nbsp;</span>.
+   3. When asked to install sudo-touchid, click <span class="bg-primary rounded-pill text-white fs-6">&nbsp; CONTINUE &nbsp;</span>.
+   4. Since Overt can't start background services yet, run the following Terminal command:
+
+      ```sh
+      sudo brew services start sudo-touchid
+      ```
 
 ---
 
