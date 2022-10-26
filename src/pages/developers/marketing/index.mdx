@@ -7,11 +7,19 @@ title: "Marketing – Overt"
 
 ## Badge
 
-You can use the following badge to advertise your software's presence on Overt. Most users are familiar with these (e.g., [Apple App Store](https://developer.apple.com/app-store/marketing/guidelines/), [Google Play Store](https://play.google.com/intl/en_us/badges/)).
+You can use the following badge to advertise your software's presence on Overt.
 
 <img src="/images/overt-badge.png" width="256" class="d-block mx-auto my-4" />
 
-If possible, please link to this image instead of redistributing it, so you can receive any artwork updates automatically.
+For automatic artwork updates, link to this image from your site and/or README. For example:
+
+```html
+<img
+  src="https://getovert.app/images/overt-badge.png"
+  width="240"
+  alt="Get it on Overt, an open app store"
+/>
+```
 
 ---
 
@@ -19,10 +27,20 @@ If possible, please link to this image instead of redistributing it, so you can 
 
 Users can install your software via Overt by clicking a link on your website or project page.
 
-"Web-based" links prompt users to install Overt first, when necessary. Add yours to the badge image above, if possible.
-
 Use the following tool to generate a quick-install link for your software.
 
 import LinkGenerator from "../../../components/LinkGenerator";
 
 <LinkGenerator client:idle />
+
+You can add your link to the Overt badge image. For example:
+
+```html
+<a href="YOUR LINK HERE">
+  <img
+    src="https://getovert.app/images/overt-badge.png"
+    width="240"
+    alt="Get it on Overt, an open app store"
+  />
+</a>
+```
