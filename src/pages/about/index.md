@@ -43,37 +43,71 @@ Please note:
 
 ## Screenshots
 
-<img
-    class="showcase-image"
-    src="/images/screenshot-0.png"
-    alt="Screenshot of Overt: Browsing installed apps"
-  />
-<img
-    class="d-block col showcase-image"
-    src="/images/screenshot-1.png"
-    alt="Screenshot of Overt: Searching for apps, search term is &quot;Microsoft&quot;"
-  />
-<img
-    class="d-block col showcase-image"
-    src="/images/screenshot-2.png"
-    alt="Screenshot of Overt: Installing Microsoft Excel"
-  />
-<img
-    class="d-block col showcase-image"
-    src="/images/screenshot-3.png"
-    alt="Screenshot of Overt: Password prompt for Microsoft Excel installer"
-  />
-<img
-    class="d-block col showcase-image"
-    src="/images/screenshot-4.png"
-    alt="Options pane"
-  />
+<script is:inline>
+  function lightbox(img) {
+    document.querySelector('#lightbox img').src = img.src;
+  }
+</script>
+
+<div class="screenshots d-flex flex-wrap justify-content-center my-4">
+  <a data-bs-toggle="modal" href="#lightbox" onclick="lightbox(event.target)">
+    <img
+      src="/images/screenshot-0.png"
+      alt="Browsing installed apps"
+    />
+  </a>
+  <a data-bs-toggle="modal" href="#lightbox" onclick="lightbox(event.target)">
+    <img
+      src="/images/screenshot-1.png"
+      alt="Searching for apps, search term is &quot;Microsoft&quot;"
+    />
+  </a>
+  <a data-bs-toggle="modal" href="#lightbox" onclick="lightbox(event.target)">
+    <img
+      src="/images/screenshot-2.png"
+      alt="Installing Microsoft Excel"
+    />
+  </a>
+  <a data-bs-toggle="modal" href="#lightbox" onclick="lightbox(event.target)">
+    <img
+      src="/images/screenshot-3.png"
+      alt="Viewing details for UTM, an installed app; action buttons read &quot;Launch&quot;, &quot;Update&quot; and &quot;Uninstall&quot;"
+    />
+  </a>
+  <a data-bs-toggle="modal" href="#lightbox" onclick="lightbox(event.target)">
+    <img
+      src="/images/screenshot-4.png"
+      height="568"
+      alt="Settings pane"
+    />
+  </a>
+  <a data-bs-toggle="modal" href="#lightbox" onclick="lightbox(event.target)">
+    <img
+      src="/images/screenshot-5.png"
+      alt="Tasks pane with Log view open"
+    />
+  </a>
+</div>
+
+<div class="modal fade" id="lightbox" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen-xl-down modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <img class="modal-body" />
+    </div>
+  </div>
 
 <style>
-  .showcase-image {
+  .screenshots :is(a, img) {
+    max-height: 250px;
+  }
+  #lightbox img {
+    max-height: 85vh;
+  }
+  .screenshots img, #lightbox img {
     object-fit: contain;
-    width: 100%;
-    height: auto;
   }
 
   .disclaimer,
