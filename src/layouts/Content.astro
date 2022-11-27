@@ -16,13 +16,8 @@ const { title } = Astro.props;
 
 <style>
   .page-body {
-    max-width: 80%;
+    max-width: min(90%, 820px);
     margin: auto;
-  }
-  @media (min-width: 1200px) {
-    .page-body {
-      width: 65%;
-    }
   }
 </style>
 
