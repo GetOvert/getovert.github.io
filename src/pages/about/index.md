@@ -5,41 +5,29 @@ title: "About – Overt"
 
 # About
 
-**Overt** is an open app store. Anyone can distribute apps for anyone else to find and install.
+**Overt** is an open app store. With Overt, you can:
 
-For developers, this means **no feature restrictions**, **no revenue cuts**, and **no arduous review process**.  
-If it's not outright malware, it's fair game.
+- explore a **vast catalog** of apps, both free and paid
+- install apps **fast**, with one or two clicks
+- remove apps even **faster**, to free up precious storage space
+- easily update apps that don't self-update
 
-For users, this means **all your apps** are available **in one place**. No more installers or "dmg" files.
+Benefits to **developers** include:
 
----
+- **no** feature restrictions
+- **no** revenue cuts
+- **no** arbitrary denials or removals
+- **simplified installation** for Overt users
+- option to **self-host** catalog sources for better control
 
-## How it works
+Software listings are provided by their developers and/or the community, in various **catalog sources**.  
+In the default catalog sources, app downloads always come from the developers' **official servers**.
 
-Overt is a graphical user interface (GUI) that unifies various package managers. _Package managers_ are command-line programs that manage software "packages", which are often applications.
-
-Most package managers work by monitoring a list of _source repositories_, each of which can provide packages to install.  
-For example, the source repository `apps` at `https://example.com/apps` might provide the packages `chrome`, `firefox`, and so on.
-
-In most cases, Overt simply talks with package managers to:
-
-1. Find out what packages are available
-2. Install/update/uninstall packages at your request
-3. Add/remove source repositories at your request
-
-Overt currently supports [Homebrew](https://brew.sh) on macOS. Support is planned for [Winget](https://github.com/microsoft/winget-cli) and [Scoop](https://scoop.sh) on Windows.
+<br/>
 
 ---
 
-## Disclaimer
-
-Please note:
-
-- Overt is not affiliated with, nor endorsed by, any supported package managers.
-- Overt is not affiliated with, nor endorsed by, any third parties whose software is available in source repositories.
-- Overt is not responsible for the contents of any third-party source repositories. Please exercise caution.
-
----
+<br/>
 
 ## Screenshots
 
@@ -88,6 +76,89 @@ Please note:
     />
   </a>
 </div>
+
+<br/>
+
+---
+
+<br/>
+
+<a id="technical" class="visbility-hidden" aria-hidden="true"></a>
+
+## What is it, **really**?
+
+Apps on Overt are provided by **package managers**, which are command-line tools that install and manage software "packages".
+
+Many package managers excel at what they do. But due to their command line UI, package managers are often only used by developers and highly experienced users. Overt's primary goal is to make them usable to everyone.
+
+So, Overt is really a **package manager GUI client**.
+
+Many package managers find packages from various **repositories** <span class="text-muted">(i.e., **catalog sources**)</span>, which are essentially websites that list software packages.
+For example, a repository called "Browsers" at `https://example.com/Browsers` could provide packages for Chrome, Firefox, and so on.
+
+Overt talks with package managers to:
+
+- List packages to add to Overt's searchable catalog
+- Install, update, and uninstall packages
+- Add and remove source repositories
+
+**Overt is currently available for macOS**, with [Homebrew](/package-managers/homebrew) as the package manager.
+
+**Overt for Windows is planned**, with [Winget](https://github.com/microsoft/winget-cli) and [Scoop](https://scoop.sh) both on the table for support.
+
+Other package managers (e.g., on Linux) are also possibilities for the long term.
+
+<br/>
+
+---
+
+<br/>
+
+## Why?
+
+Apple has come under fire lately for locking down the software users can run on their devices, and imposing stringent and increasingly aggressive rules on what third-party developers are allowed to say and do.
+
+<!-- I believe the backlash is justified. It's one thing for Apple to protect their customers, but it's another entirely to hold some of the policies they do, and—perhaps worse—enforce them inconsistently. Run a [web search for "apple antitrust"](https://www.google.com/search?q=apple+antitrust) if you'd like some examples. -->
+
+Overt <span class="text-muted">(or "OpenStore," the original name)</span> is thus **an answer to Apple's App Store.**
+
+**Like the App Store**, Overt helps you install and manage your favourite apps, and discover new ones to try.
+
+**Unlike the App Store**, as proudly proclaimed on this site's homepage:
+
+- **Overt does not restrict app features.**
+  - If a web browser is a reskin of Safari, that's by choice.
+  - If something could never work in the macOS sandbox, that's OK.
+  - No arbitrarily delistings; anyone can create a source repository.
+  <!-- ("[won't someone think of the children?!](https://en.wikipedia.org/wiki/Censorship_by_Apple#App_Store)")
+      <span class="text-muted">(Overt isn't for phones, of course, but [F-Droid](https://f-droid.org/) exists ;)</span> -->
+- **Overt does not process payments.**
+  - Legit payment processor? It's fair game.
+  - No commission for being listed on the store.
+    <!-- <span class="text-muted">(and you won't get special treatment just for being Amazon, etc.)</span> -->
+  - Users can be instructed to sign up out-of-app.  
+    <span class="text-muted">(oh the horror)</span>
+
+<!-- I only <span class="text-muted">(somewhat cautiously)</span> continue to use macOS because it's still technically an open platform. You can still use software distrubuted outside of Apple's controlled environment, and you can still modify your system <span class="text-muted">(regardless of how annoying it can be)</span>.
+
+It is this openness, however small, that allows Overt to exist. While I'm delighted this is so, I'm also very nervous about what Apple might do to macOS should a viable competitor to their App Store truly take off. It would be a final test of conscience, I suppose. -->
+
+<br/>
+
+---
+
+<br/>
+
+<h2 class="h5" id="fyi">FYI</h2>
+
+<ul class="small">
+<li>Overt is not affiliated with or endorsed by the package managers it builds on.</li>
+<li>Overt is not affiliated with or endorsed by the developers of software listed in catalog sources.</li>
+<li>Overt is not responsible for the contents of catalog sources, as they can be self-hosted like a website.<br/>
+Only add sources you trust.</li>
+</ul>
+
+<br/>
 
 <div class="modal fade" id="lightbox" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-fullscreen-xl-down modal-xl">
