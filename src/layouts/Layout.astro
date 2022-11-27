@@ -32,7 +32,7 @@ const { title } = Astro.props;
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
   </head>
-  <body class="bg-light">
+  <body class="bg-light d-flex flex-column">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand d-flex" href="/">
@@ -62,14 +62,18 @@ const { title } = Astro.props;
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav navbar-nav-left">
             <li class="nav-item ms-3 mt-2 mb-1 ms-lg-1 me-lg-2 my-lg-0">
-              <a class="btn btn-primary" href="/about"
+              <a
+                class="btn btn-primary w-100 w-lg-auto py-2point5 py-lg-btn"
+                href="/about"
                 >About <i class="bi bi-info-circle-fill ms-1" aria-hidden="true"
                 ></i>
               </a>
             </li>
 
             <li class="nav-item ms-3 my-1 ms-lg-1 me-lg-2 my-lg-0">
-              <a class="btn btn-success" href="/install"
+              <a
+                class="btn btn-success w-100 w-lg-auto py-2point5 py-lg-btn"
+                href="/install"
                 >Install <i class="bi bi-arrow-down ms-1" aria-hidden="true"
                 ></i>
               </a>
@@ -77,7 +81,44 @@ const { title } = Astro.props;
 
             <li class="nav-item dropdown ms-3 my-1 ms-lg-1 me-lg-2 my-lg-0">
               <a
-                class="btn btn-outline-dark dropdown-toggle"
+                class="btn btn-info dropdown-toggle w-100 w-lg-auto py-2point5 py-lg-btn"
+                id="navbarDropdownMenuLink-help"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Help
+              </a>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink-help"
+              >
+                <li class="dropdown-header">Package Managers</li>
+                <li>
+                  <a class="dropdown-item" href="/package-managers/homebrew"
+                    >Homebrew</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item ms-3 my-1 ms-lg-1 me-lg-2 my-lg-0">
+              <a
+                class="btn btn-warning w-100 w-lg-auto py-2point5 py-lg-btn"
+                href="https://github.com/GetOvert/Overt/discussions"
+                target="_blank"
+                >Discuss <i
+                  class="bi bi-box-arrow-up-right ms-1"
+                  role="img"
+                  aria-label="External link"></i>
+              </a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav ms-lg-auto">
+            <li class="nav-item dropdown ms-3 my-1 ms-lg-1 me-lg-2 my-lg-0">
+              <a
+                class="btn btn-outline-dark dropdown-toggle w-100 w-lg-auto py-2point5 py-lg-btn"
                 id="navbarDropdownMenuLink-developers"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -101,23 +142,10 @@ const { title } = Astro.props;
                 </li>
               </ul>
             </li>
-          </ul>
 
-          <ul class="navbar-nav ms-lg-auto">
-            <li class="nav-item ms-3 my-1 ms-lg-1 me-lg-2 my-lg-0">
-              <a
-                class="btn btn-info"
-                href="https://github.com/GetOvert/Overt/discussions"
-                target="_blank"
-                >Discuss <i
-                  class="bi bi-box-arrow-up-right ms-1"
-                  role="img"
-                  aria-label="External link"></i>
-              </a>
-            </li>
             <li class="nav-item ms-3 mt-1 mb-2 ms-lg-1 me-lg-2 my-lg-0">
               <a
-                class="btn btn-outline-secondary"
+                class="btn btn-outline-dark w-100 w-lg-auto py-2point5 py-lg-btn"
                 href="https://github.com/GetOvert"
                 target="_blank"
                 >GitHub <i
