@@ -38,6 +38,13 @@ Homebrew provides two types of packages:
 4. Type your computer password, then press <kbd>Return</kbd>. <span class="text-muted">Nothing will show as you type; this is expected.</span>
 5. When asked if you want to continue, press <kbd>Return</kbd>.
 6. Wait for Homebrew to download and install.
+7. Add the default catalog source for macOS GUI apps:
+   1. Copy this command:
+      ```sh
+      brew tap homebrew/cask
+      ```
+   2. Paste into Terminal, then press <kbd>Return</kbd>.
+   3. Wait for the process to complete.
 
 ### Add to Overt
 
