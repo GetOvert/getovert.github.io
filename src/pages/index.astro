@@ -3,46 +3,56 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Overt">
-  <img
-    class="app-icon-image drop-shadow my-2 mb-3"
-    src="/images/overt-app-icon.png"
-    alt="Overt app icon"
-  />
-  <h1 class="text-center fw-bolder mb-0">Overt</h1>
-  <h2 class="text-center">
-    <div class="fs-5">open app store</div>
-    <div class="fs-5 mt-4 mb-5">for macOS</div>
-  </h2>
+  <div class="d-flex justify-content-center mb-4">
+    <img
+      class="app-icon-image drop-shadow ms-2 me-1"
+      src="/images/overt-app-icon.png"
+      alt="Openstore app icon"
+    />
+    <h1 class="word-mark-stack ms-1">
+      Overt<br />
+      <span class="smol fw-normal">open app store</span>
+    </h1>
+  </div>
 
-  <div class="content-width-constrained-strong my-4">
-    <p class="text-lg-center mb-lg-4">
-      Overt helps you find, install, and manage your favorite apps.
+  <div class="content-width-constrained-strong mb-4">
+    <p
+      class="h4 text-center"
+      style="font-size: 1.4rem; line-height: 1.5; margin-top: 2.5rem; margin-bottom: 2.5rem"
+    >
+      Explore, install, and manage your favourite software<br />
+      with a free and open app store for macOS
     </p>
 
     <div class="row">
       <div class="col-12 col-lg-6">
-        <p class="text-lg-center mb-2">Overt <strong>doesn't</strong>:</p>
+        <p class="h5 text-lg-center mb-2 mb-lg-4">
+          Overt <strong>doesn't</strong>:
+        </p>
         <ul class="feature-list bullet-cross">
-          <li>Restrict app features</li>
           <li>Process payments</li>
+          <li>Restrict app features</li>
+          <li>Remove apps arbitrarily</li>
         </ul>
       </div>
 
       <div class="col-12 col-lg-6">
-        <p class="text-lg-center mb-2">Overt <strong>does</strong>:</p>
+        <p class="h5 text-lg-center mb-2 mb-lg-4">
+          Overt <strong>does</strong>:
+        </p>
         <ul class="feature-list bullet-checkmark">
-          <li>Give you a catalog of 3,000+ apps at your fingertips</li>
-          <li>Install, update, and uninstall apps with a single click</li>
-          <li>Let you add your own source repositories</li>
+          <li>Offer 3,000+ apps by default</li>
+          <li>Support third-party catalogs</li>
+          <li>1-click install/update/uninstall</li>
         </ul>
       </div>
     </div>
 
     <div class="d-flex flex-column gap-3 flex-lg-row gap-lg-2 mt-3">
-      <a class="btn btn-primary" href="/about"
+      <a class="btn btn-primary cta" href="/about"
         >About <i class="bi bi-info-circle-fill ms-1" aria-hidden="true"></i>
       </a>
-      <a class="btn btn-success" href="/install"
+      <a class="btn btn-success cta" href="/install"
         >Install <i class="bi bi-arrow-down ms-1" aria-hidden="true"></i>
       </a>
     </div>
@@ -51,6 +61,7 @@ import Layout from "../layouts/Layout.astro";
   <style>
     body {
       --bs-body-font-size: 1.2rem;
+      min-height: 100vh;
     }
 
     ul.feature-list {
@@ -79,12 +90,8 @@ import Layout from "../layouts/Layout.astro";
       content: "\F26E";
     }
 
-    .btn {
-      display: block;
-      margin: auto;
-
-      width: 67%;
-      height: 3.2em;
+    .btn.cta {
+      flex: auto;
       font-size: 1rem;
       line-height: 2.2em;
     }

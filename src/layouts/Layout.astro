@@ -131,7 +131,7 @@ const { title } = Astro.props;
       </div>
     </nav>
 
-    <main class="container-fluid mt-4">
+    <main class="container-fluid py-4 my-auto">
       <slot />
     </main>
 
@@ -163,19 +163,29 @@ const { title } = Astro.props;
     filter: drop-shadow(0.1em 0.2em 0.23em rgba(0, 0, 0, 0.25));
   }
 
-  .navbar-brand {
+  .word-mark-stack {
     font-family: Inter, var(--bs-body-font-family);
     font-weight: 600;
 
-    color: #2c2d29 !important;
-  }
-
-  .navbar-brand .word-mark-stack {
-    margin-top: 0.3rem;
+    margin-top: 0.32em;
     line-height: 0.85;
   }
-  .navbar-brand .word-mark-stack .smol {
-    font-size: 0.8rem;
+  .word-mark-stack .smol {
+    font-size: 0.64em;
+  }
+
+  h1,
+  .h1 {
+    font-size: 2.4rem;
+  }
+  h3,
+  .h3 {
+    font-size: 1.45rem;
+    margin-top: 0.75em;
+  }
+
+  .navbar-brand {
+    color: #2c2d29 !important;
   }
 
   .navbar-nav-left .nav-item .btn {
@@ -198,11 +208,32 @@ const { title } = Astro.props;
   }
 
   .app-icon-image {
-    display: block;
-    margin: auto;
-
     object-fit: contain;
-    width: max(4rem, 9vw);
+    width: 5.5rem;
     height: auto;
+  }
+
+  .dropdown-header {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  .overscroll-enabler {
+    margin-top: 20rem;
+    user-select: none;
+  }
+
+  kbd {
+    opacity: 0.7;
+  }
+
+  .py-2point5 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+  @media (min-width: 992px) {
+    .py-lg-btn {
+      padding: 0.375rem 0.75rem;
+    }
   }
 </style>
