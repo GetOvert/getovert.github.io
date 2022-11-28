@@ -5,7 +5,7 @@ import { customElement, state } from "lit/decorators.js";
 export const tagName = "getovert-link-generator";
 
 @customElement(tagName)
-export default class LinkGenerator extends BootstrapBlockElement {
+export class LinkGenerator extends BootstrapBlockElement {
   @state()
   private useCustomSourceRepository = false;
   @state()
