@@ -100,7 +100,9 @@ export class GitHubReleaseAsset extends BootstrapBlockElement {
               })}
             </b>
           </li>
-          <li class="downloads"><b>${download_count}</b> downloads</li>
+          <li class="downloads">
+            <b>${download_count}</b> download${download_count === 1 ? "" : "s"}
+          </li>
         </ul>
       </div>
     `;
