@@ -27,8 +27,8 @@ Homebrew provides two types of packages:
 ### Requirements
 
 - <a href="https://docs.brew.sh/Installation#macos-requirements" target="_blank">macOS 11 (Big Sur) or later is officially supported; macOS 10.11 (El Capitan) or later should work<i class="bi bi-box-arrow-up-right ms-1" role="img" aria-label="External link"></i></a>
-- 1.5GB storage space
-- 2GB additional space for Apple's Command Line Developer Tools for Xcode, if not yet installed
+- 1.5 GB storage space
+- 2 GB additional space for Apple's Command Line Developer Tools for Xcode, if not yet installed
 
 ### Install
 
