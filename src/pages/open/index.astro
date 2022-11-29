@@ -1,21 +1,19 @@
 ---
 import Content from "../../layouts/Content.astro";
+import Logo from "../../components/Logo.astro";
 ---
 
 <Content title="Open – Overt">
-  <img
-    class="app-icon-image drop-shadow my-2 mb-3"
-    src="/images/overt-app-icon.png"
-    alt="Overt app icon"
-  />
-  <h1 class="text-center">Continue in the Overt app</h1>
+  <div class="d-flex justify-content-center mb-4">
+    <Logo size="large" />
+  </div>
+
+  <h2 class="text-center mb-4">Continue in the desktop app</h2>
 
   <div class="content-width-constrained-strong">
-    <p>You clicked a link that opens in the Overt app.</p>
-
     <hr />
 
-    <p><b>Don't have the app yet?</b></p>
+    <p><b>Don't have it yet?</b></p>
 
     <p>
       Overt is an open app store for macOS. It's free and <a
@@ -64,6 +62,7 @@ import Content from "../../layouts/Content.astro";
 <style>
   body {
     --bs-body-font-size: 1.2rem;
+    min-height: 100vh;
   }
 
   h1 {

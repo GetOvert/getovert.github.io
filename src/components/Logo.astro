@@ -1,0 +1,59 @@
+---
+export interface Props {
+  size: "small" | "large";
+}
+
+const { size } = Astro.props;
+---
+
+<img
+  class={`app-icon app-icon-${size} drop-shadow ms-2 me-1`}
+  src="/images/overt-app-icon.png"
+  alt="Openstore app icon"
+/>
+{
+  size === "small" ? (
+    <div class="word-mark-stack ms-1">
+      Overt
+      <br />
+      <span class="smol fw-normal">open app store</span>
+    </div>
+  ) : (
+    <h1 class="word-mark-stack ms-1">
+      Overt
+      <br />
+      <span class="smol fw-normal">open app store</span>
+    </h1>
+  )
+}
+
+<style>
+  .app-icon {
+    object-fit: contain;
+  }
+  .app-icon-large {
+    object-fit: contain;
+    width: 5.5rem;
+    height: auto;
+  }
+  .app-icon-small {
+    width: 46px;
+  }
+
+  .word-mark-stack {
+    font-family: Inter, var(--bs-body-font-family);
+    font-weight: 600;
+
+    text-align: left !important;
+    margin-top: 0.32em;
+    margin-bottom: 0;
+    line-height: 0.85;
+  }
+  .word-mark-stack .smol {
+    font-size: 0.64em;
+  }
+
+  .drop-shadow {
+    filter: drop-shadow(0.1em 0.2em 0.23em rgba(0, 0, 0, 0.25));
+  }
+</style>
