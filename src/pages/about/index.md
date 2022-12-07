@@ -47,13 +47,13 @@ In the default catalog sources, app downloads always come from the developers' *
   <a data-bs-toggle="modal" href="#lightbox" onclick="lightbox(event.target)">
     <img
       src="/images/screenshot-1.png"
-      alt="Searching for apps, search term is &quot;Microsoft&quot;"
+      alt="Searching for apps, search term is &quot;note&quot;"
     />
   </a>
   <a data-bs-toggle="modal" href="#lightbox" onclick="lightbox(event.target)">
     <img
       src="/images/screenshot-2.png"
-      alt="Installing Microsoft Excel"
+      alt="Viewing app details for Google Chrome; action button reads &quot;Install&quot;"
     />
   </a>
   <a data-bs-toggle="modal" href="#lightbox" onclick="lightbox(event.target)">
@@ -66,13 +66,13 @@ In the default catalog sources, app downloads always come from the developers' *
     <img
       src="/images/screenshot-4.png"
       height="568"
-      alt="Settings pane"
+      alt="Overt settings pane"
     />
   </a>
   <a data-bs-toggle="modal" href="#lightbox" onclick="lightbox(event.target)">
     <img
       src="/images/screenshot-5.png"
-      alt="Tasks pane with Log view open"
+      alt="Overt tasks pane with Log view open"
     />
   </a>
 </div>
