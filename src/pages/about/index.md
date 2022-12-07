@@ -129,7 +129,7 @@ Overt <span class="text-muted">(or "OpenStore," the original name)</span> is thu
 - **Overt does not restrict app features.**
   - If a web browser is a reskin of Safari, that's by choice.
   - If something could never work in the macOS sandbox, that's OK.
-  - No arbitrarily delistings; anyone can create a source repository.
+  - No arbitrarily delistings; anyone can create a catalog source.
   <!-- ("[won't someone think of the children?!](https://en.wikipedia.org/wiki/Censorship_by_Apple#App_Store)")
       <span class="text-muted">(Overt isn't for phones, of course, but [F-Droid](https://f-droid.org/) exists ;)</span> -->
 - **Overt does not process payments.**
