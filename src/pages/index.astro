@@ -1,8 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Logo from "../components/Logo.astro";
+import stats from "../data/stats.json";
+import { fetchStatsOrDoNothing } from "../data/fetchStats";
 ---
 
+{fetchStatsOrDoNothing()}
 <Layout title="Overt">
   <div class="d-flex justify-content-center mb-4">
     <Logo size="large" />
@@ -34,7 +37,7 @@ import Logo from "../components/Logo.astro";
           Overt <strong>does</strong>:
         </p>
         <ul class="feature-list bullet-checkmark">
-          <li>Offer 3,000+ apps by default</li>
+          <li>Offer ~{(stats.appsCount).toLocaleString('en-US')} apps by default</li>
           <li>Support external catalogs</li>
           <li>1-click install/update/uninstall</li>
         </ul>
