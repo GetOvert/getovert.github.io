@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Logo from "../components/Logo.astro";
 import stats from "../data/stats.json";
-import { fetchStatsOrDoNothing } from "../data/fetchStats";
+import { fetchStatsOrDoNothing, floorToIncrement } from "../data/fetchStats";
 ---
 
 {fetchStatsOrDoNothing()}
@@ -37,7 +37,13 @@ import { fetchStatsOrDoNothing } from "../data/fetchStats";
           Overt <strong>does</strong>:
         </p>
         <ul class="feature-list bullet-checkmark">
-          <li>Offer ~{(stats.appsCount).toLocaleString('en-US')} apps by default</li>
+          <li>
+            Offer {
+              floorToIncrement(stats.brewCaskAppsCount, 10).toLocaleString(
+                "en-US"
+              )
+            }+ apps by default
+          </li>
           <li>Support external catalogs</li>
           <li>1-click install/update/uninstall</li>
         </ul>
