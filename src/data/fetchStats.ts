@@ -1,4 +1,9 @@
+import { readFileSync } from "fs";
 import { writeFile } from "fs/promises";
+
+const PlaceholderStats = Object.freeze({
+  brewCaskAppsCount: 4_000,
+});
 
 fetchStatsOrDoNothing();
 
@@ -7,6 +12,15 @@ export async function fetchStatsOrDoNothing() {
     const stats = await fetchStats();
     await storeStats(stats);
   } catch {}
+}
+
+export function loadStatsSync() {
+  try {
+    return JSON.parse(readFileSync("./src/data/stats.json", "utf-8"));
+  } catch (error) {
+    console.error(error);
+    return PlaceholderStats;
+  }
 }
 
 async function storeStats(stats: Awaited<ReturnType<typeof fetchStats>>) {

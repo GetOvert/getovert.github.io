@@ -1,8 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Logo from "../components/Logo.astro";
-import stats from "../data/stats.json";
-import { fetchStatsOrDoNothing, floorToIncrement } from "../data/fetchStats";
+import {
+  fetchStatsOrDoNothing,
+  floorToIncrement,
+  loadStatsSync,
+} from "../data/fetchStats";
 ---
 
 {fetchStatsOrDoNothing()}
@@ -39,9 +42,10 @@ import { fetchStatsOrDoNothing, floorToIncrement } from "../data/fetchStats";
         <ul class="feature-list bullet-checkmark">
           <li>
             Offer {
-              floorToIncrement(stats.brewCaskAppsCount, 10).toLocaleString(
-                "en-US"
-              )
+              floorToIncrement(
+                loadStatsSync().brewCaskAppsCount,
+                10
+              ).toLocaleString("en-US")
             }+ apps by default
           </li>
           <li>Support external catalogs</li>
