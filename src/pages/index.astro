@@ -4,11 +4,13 @@ import Logo from "../components/Logo.astro";
 import {
   fetchStatsOrDoNothing,
   floorToIncrement,
-  loadStatsSync,
+  loadStats,
 } from "../data/fetchStats";
+
+await fetchStatsOrDoNothing();
+const stats = await loadStats();
 ---
 
-{fetchStatsOrDoNothing()}
 <Layout title="Overt">
   <div class="d-flex justify-content-center mb-4">
     <Logo size="large" />
@@ -42,10 +44,9 @@ import {
         <ul class="feature-list bullet-checkmark">
           <li>
             Offer {
-              floorToIncrement(
-                loadStatsSync().brewCaskAppsCount,
-                10
-              ).toLocaleString("en-US")
+              floorToIncrement(stats.brewCaskAppsCount, 10).toLocaleString(
+                "en-US"
+              )
             }+ apps by default
           </li>
           <li>Support external catalogs</li>

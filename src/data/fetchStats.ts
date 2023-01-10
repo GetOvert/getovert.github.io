@@ -1,11 +1,8 @@
-import { readFileSync } from "fs";
-import { writeFile } from "fs/promises";
+import { readFile, writeFile } from "fs/promises";
 
 const PlaceholderStats = Object.freeze({
   brewCaskAppsCount: 4_000,
 });
-
-fetchStatsOrDoNothing();
 
 export async function fetchStatsOrDoNothing() {
   try {
@@ -14,9 +11,9 @@ export async function fetchStatsOrDoNothing() {
   } catch {}
 }
 
-export function loadStatsSync() {
+export async function loadStats() {
   try {
-    return JSON.parse(readFileSync("./src/data/stats.json", "utf-8"));
+    return JSON.parse(await readFile("./src/data/stats.json", "utf-8"));
   } catch (error) {
     console.error(error);
     return PlaceholderStats;
