@@ -1,6 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Logo from "../components/Logo.astro";
+import {
+  fetchStatsOrDoNothing,
+  floorToIncrement,
+  loadStats,
+} from "../data/fetchStats";
+
+await fetchStatsOrDoNothing();
+const stats = await loadStats();
 ---
 
 <Layout title="Overt">
@@ -34,7 +42,13 @@ import Logo from "../components/Logo.astro";
           Overt <strong>does</strong>:
         </p>
         <ul class="feature-list bullet-checkmark">
-          <li>Offer 3,000+ apps by default</li>
+          <li>
+            Offer {
+              floorToIncrement(stats.brewCaskAppsCount, 10).toLocaleString(
+                "en-US"
+              )
+            }+ apps by default
+          </li>
           <li>Support external catalogs</li>
           <li>1-click install/update/uninstall</li>
         </ul>
