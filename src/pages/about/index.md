@@ -149,6 +149,18 @@ It is this openness, however small, that allows Overt to exist. While I'm deligh
 
 <br/>
 
+## How is it different from [Cakebrew](https://www.cakebrew.com/)?
+
+- **Supports casks** — much wider variety of software, more of which is relevant to non-developer audiences
+- **…and multiple package managers** — a Windows version that supports [Scoop](/package-managers/scoop) is close to beta release
+- **…and is actively maintained** — unfortunately, Cakebrew has not seen an update since March of 2021
+- **…but exposes fewer technical details** — Cakebrew's UI is specialized for Homebrew formulae, so it exposes more useful details for developers than Overt does
+- **…and is less mature** — Cakebrew has received much more work and testing than Overt's formulae support, so it likely has fewer bugs and less confusing edge-case behaviour.
+
+<br/>
+
+---
+
 <h2 class="h5" id="fyi">FYI</h2>
 
 <ul class="small">
